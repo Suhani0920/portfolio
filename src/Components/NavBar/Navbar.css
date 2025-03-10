@@ -1,89 +1,129 @@
-.nabvar{
-    background-color: #333;
-    color: white;
-    padding: 10px;
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin:20px 170px;
-}
-.nav-menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style:none;
-    gap:60px;
-    font-size:20px;
-}
-.nav-connect{
-    /*display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style:none;
-    gap:20px;
-    font-size:20px;*/
-    padding:20px 40px;
-    border-radius: 50px;
-   
-
-
-
-    transition:0.5s;
-    font-size:22px;
-    cursor:pointer;
-}
-
-.nav-connect:hover{
-    background-color: #555;
+    padding: 15px 20px;
+    background-color: #222;
     color: white;
-    transform: scale(1.05);
-}
-
-.nav-menu li{
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-    cursor: pointer;
-}
-
-.anchor-link{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  /* Animated Name on Left */
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeIn 1s ease-in-out forwards;
+    margin-left: 150px;
+  }
+  .nav-mob-close{
+    display: none;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Desktop Navigation */
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-menu li {
+    display: inline;
+    margin-right: 120px;
+  }
+  
+  .nav-menu a {
     text-decoration: none;
     color: white;
-}
-@media(max-width:768px){
-    .nabvar{
-        margin:20px 20px;
+    font-size: 1rem;
+    transition: 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    color: #ff9800;
+  }
+  
+  /* Hide Toggle Button on Full Screen */
+  .nav-mob-open {
+    display: none;
+    width: 30px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Navigation */
+  @media (max-width: 768px) {
+    /* Hide desktop menu and show mobile toggle */
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      background-color: #222;
+      width: 250px;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      transition: right 0.3s ease-in-out;
+      padding-top: 20px;
     }
-    
-    .nav-connect{
-        display: none;
+  
+    .nav-menu.active {
+      right: 0;
     }
-    .nav-mob-open{
-        display: block;
-        position:fixed;
-        right:30px;
+  
+    .nav-menu li {
+      padding: 15px 0;
     }
-    .nav-mob-close{
-        display: block;
-        position:relative;
-        top:30px;
-        left:290px;
-        width:30px;
+  
+    /* Show Close (X) Button Inside Menu */
+    .nav-mob-close {
+      display: block;
+      width: 18px;
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 20px;
     }
-    .nav-menu{
-        display: none;
-        flex-direction: column;
-        gap:30px;
-        position:fixed;
-        background-color: #333;
-        width:350px;
-        top:0;
-        right:-350px;
-       
-        z-index:2;
-        align-items: center;
-        height:100%;
-        transition:right 0.5s;
+  
+    /* Show Toggle Button (Menu Open) on Right */
+    .nav-mob-open {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 15px;
     }
-}
-
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: fadeIn 1s ease-in-out forwards;
+        margin-left: 10px;
+      }
+  }
+  

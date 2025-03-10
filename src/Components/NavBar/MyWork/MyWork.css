@@ -1,45 +1,119 @@
-.mywork{
+/* My Work Section */
+.mywork {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 80px;
     margin-bottom: 170px;
-    gap:80px
+    gap: 80px;
 }
 
-.mywork-title{
-    position:relative;
+/* Title */
+.mywork-title {
+    position: relative;
+    text-align: center;
 }
 
-.mywork-title h1{
-    padding:0px 30px;
-    font-size:60px;
+.mywork-title h1 {
+    padding: 0px 30px;
+    font-size: 60px;
     font-weight: 600;
 }
 
-.mywork-title img{
-    position:absolute;
-    bottom:0;
-    right:0;
-    z-index:-1;
+.mywork-title img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
 }
-.mywork-container{
+
+/* Work Container - Grid Layout */
+.mywork-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    
     gap: 40px;
+    justify-content: center;
 }
 
-mywork-container img{
-    box-sizing:border-box;
-    width:419px;
-    height:280px;
-    transition:0.3s;
+/* Work Images */
+.mywork-container img {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 419px;
+    height: 280px;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
     cursor: pointer;
+    border-radius: 10px;
 }
 
-.mywork-container img:hover{
+.mywork-container img:hover {
     transform: scale(1.1);
-    
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .mywork {
+        margin-top: 60px;
+        margin-bottom: 100px;
+        gap: 60px;
+    }
+
+    .mywork-title h1 {
+        font-size: 50px;
+    }
+
+    .mywork-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .mywork-container img {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mywork {
+        margin-top: 40px;
+        margin-bottom: 80px;
+        gap: 40px;
+    }
+
+    .mywork-title h1 {
+        font-size: 40px;
+    }
+
+    .mywork-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 25px;
+    }
+
+    .mywork-container img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mywork {
+        margin-top: 30px;
+        margin-bottom: 60px;
+        gap: 30px;
+    }
+
+    .mywork-title h1 {
+        font-size: 32px;
+    }
+
+    .mywork-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .mywork-container img {
+        height: auto;
+        border-radius: 8px;
+    }
 }

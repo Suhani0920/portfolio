@@ -1,62 +1,118 @@
-.hero{
-    display:flex;
+/* Hero Section */
+.hero {
+    display: flex;
     padding: 50px 0;
-    align-items:center;
-    flex-direction:column;
-    gap:35px;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
     text-align: center;
 }
-.hero h1{
-    font-size: 90px;
-    text-align: center;
-    width:70%;
-    font-size:60px;
-    font-weight: 600;
-    
 
+/* Heading */
+.hero h1 {
+    font-size: 60px;
+    text-align: center;
+    width: 70%;
+    font-weight: 600;
 }
-.hero-action{
-    display:flex;
-    gap:25px;
-    justify-content:center;
-    align-items:center;
+
+/* Hero Action Buttons */
+.hero-action {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 50px;
 }
 
-.hero-connect{
-    padding:30px 45px;
-    border-radius:50px;
-    cursor:pointer;
-    
-   
-   /* display:flex;
-    gap:25px;
-    justify-content:center;
-    align-items:center;
-    font-size: 24px;
+/* Buttons */
+.hero-connect, .hero-resume {
+    padding: 15px 45px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 20px;
     font-weight: 500;
-    margin-bottom: 50px;*/
+    transition: all 0.3s ease-in-out;
 }
-.hero-resume{
-    padding:10px 45px;
-    border-radius:50px;
-    cursor:pointer;
-    border:2px solid;
-    /*display:flex;
-    gap:25px;
-    justify-content:center;
-    align-items:center;
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 50px;*/
+
+/* Primary Button */
+.hero-connect {
+    background-color: #b415FF;
+    color: white;
+    border: none;
 }
-.hero-connect:hover{
+.anchor-link{
+    text-decoration: none;
+    color: white;
+}
+
+.hero-connect:hover {
     border: 2px solid #f5f5f5;
-   
+    background-color: transparent;
+    color: #b415FF;
 }
-.hero-resume:hover{
-    border-color: #b415FF;
-   
+
+/* Secondary Button */
+.hero-resume {
+    background-color: transparent;
+    border: 2px solid #b415FF;
+    color: #b415FF;
+}
+
+.hero-resume:hover {
+    background-color: #b415FF;
+    color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 50px;
+        width: 80%;
+    }
+
+    .hero-action {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-connect, .hero-resume {
+        font-size: 18px;
+        padding: 12px 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 30px 0;
+        gap: 25px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        width: 90%;
+    }
+
+    .hero-connect, .hero-resume {
+        font-size: 16px;
+        padding: 10px 35px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 32px;
+        width: 95%;
+    }
+
+    .hero-action {
+        gap: 10px;
+    }
+
+    .hero-connect, .hero-resume {
+        font-size: 14px;
+        padding: 8px 30px;
+    }
 }

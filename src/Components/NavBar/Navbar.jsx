@@ -6,22 +6,37 @@ import menu_close from '../../assets/menu_close.svg';
 
 
 const Navbar = () => {
-  const [menu, setMenu] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className='nabvar'>
-      <img src={menu_open} alt="" className="nav-mob-open"/>
-      <ul className="nav-menu">
-       <img src={menu_close} alt="" className="nav-mob-close" />
-        <li><AnchorLink className='anchor-link'  href='#home'><p onClick={()=>setMenu("home")}>Home</p></AnchorLink></li>
-        <li><AnchorLink className='anchor-link' offset={50} href='#about'><p onClick={()=>setMenu("about")}>About Me</p></AnchorLink></li>
-          
-        <li><AnchorLink className='anchor-link' offset={50} href='#work'><p onClick={()=>setMenu(portfolio)}>Portfolio</p></AnchorLink></li>
-        <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={()=>setMenu(contact)}>Contact</p></AnchorLink></li>    
-      </ul>
-      <div className="nav-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink></div>
-    </div>
-  )
-}
+    <div className="navbar">
+      {/* Left Side: Animated Name */}
+      <div className="logo">Suhani Pal</div>
 
-export default Navbar
+      {/* Right Side: Toggle Button (Visible in Mobile) */}
+      <img 
+        src={menu_open} 
+        alt="menu" 
+        className="nav-mob-open" 
+        onClick={() => setMenuOpen(true)} 
+      />
+
+      {/* Navigation Menu */}
+      <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
+        {/* Close Button (X) inside menu */}
+        <img 
+          src={menu_close} 
+          alt="close" 
+          className="nav-mob-close" 
+          onClick={() => setMenuOpen(false)} 
+        />
+        <li><AnchorLink className="anchor-link" href="#home" onClick={() => setMenuOpen(false)}>Home</AnchorLink></li>
+        <li><AnchorLink className="anchor-link" href="#about" offset={50} onClick={() => setMenuOpen(false)}>About Me</AnchorLink></li>
+        <li><AnchorLink className="anchor-link" href="#work" offset={50} onClick={() => setMenuOpen(false)}>Portfolio</AnchorLink></li>
+        <li><AnchorLink className="anchor-link" href="#contact" offset={50} onClick={() => setMenuOpen(false)}>Contact</AnchorLink></li>
+      </ul>
+    </div>
+  );
+};
+
+export default Navbar;
